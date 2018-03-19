@@ -12,6 +12,7 @@ script:
   - git init
   - git config user.name 'ESbook'
   - git config user.email 'book.eson.org@gmail.com'
+  - echo $GH_TOKEN
   - 'git remote add origin ''https://$GH_TOKEN@github.com/ESbook/TCP-IP.git'''
   - git add .
   - git commit -m 'update by travis'
