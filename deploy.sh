@@ -12,16 +12,14 @@ rev=$(git rev-parse --short HEAD)
 
 cd _book
 
-git initgit config user.name "esbook"
-
+git init
+git config user.name "esbook"
 git config user.email "book.eson.org@gmail.com"
-
 git remote add upstream "https://$GH_TOKEN@github.com/ESbook/TCP-IP.git"
 
 echo "book.eson.org" > CNAME
 
+echo "pushing to github"
 git add -A
-
 git commit -m "rebuild pages at ${rev}"
-
 git push -f upstream HEAD:gh-pages
