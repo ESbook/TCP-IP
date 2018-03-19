@@ -11,7 +11,8 @@ install:
  - "npm install gitbook -g"
  - "npm install -g gitbook-cli"
 script:
- - "gitbook build"
+ - "gitbook install"  # install gitbook plugin
+ - "gitbook build"  # build to static pages
 after_success:
  - "sh deploy.sh"
 
