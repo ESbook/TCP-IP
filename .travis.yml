@@ -1,0 +1,19 @@
+# for https://travis-ci.org/
+
+sudo: false
+
+# S: Build Lifecycle
+install:
+  - gitbook install
+script:
+  - gitbook build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: 2f6e9d835c8fb7a617e0fe909a203bc960335f52  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  on:
+    branch: master
+  #- git push -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+
