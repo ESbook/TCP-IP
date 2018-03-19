@@ -13,6 +13,9 @@ install:
 script:
  - "gitbook install"  # install gitbook plugin
  - "gitbook build"  # build to static pages
+ - "echo 'dfd'"
+ - "cd _book"
+ - "git init"
 after_success:
  - "cd _book"
  - "git init"
