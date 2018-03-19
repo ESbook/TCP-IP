@@ -1,0 +1,29 @@
+language: "node_js"
+
+
+env:
+  global:
+    - GH_TOKEN: 2f6e9d835c8fb7a617e0fe909a203bc960335f52
+
+node_js:
+ - "node"
+install:
+ - "npm install gitbook -g"
+ - "npm install -g gitbook-cli"
+script:
+ - "gitbook install"  # install gitbook plugin
+ - "gitbook build"  # build to static pages
+ - "echo 'dfd'"
+ - "cd _book"
+ - "git init"
+after_success:
+ - "cd _book"
+ - "git init"
+ - "git config user.name 'esbook'"
+ - "git config user.email 'book.eson.org@gmail.com'"
+ - "git remote add origin 'https://$GH_TOKEN@github.com/ESbook/TCP-IP.git'" 
+ - "git add ."
+ - "git commit -m 'update'"
+ - "git push -f origin gh-pages"
+ - "sh deploy.sh"
+
