@@ -14,5 +14,13 @@ script:
  - "gitbook install"  # install gitbook plugin
  - "gitbook build"  # build to static pages
 after_success:
+ - "cd _book"
+ - "git init"
+ - "git config user.name 'esbook'"
+ - "git config user.email 'book.eson.org@gmail.com'"
+ - "git remote add origin 'https://$GH_TOKEN@github.com/ESbook/TCP-IP.git'" 
+ - "git add ."
+ - "git commit -m 'update'"
+ - "git push -f origin gh-pages"
  - "sh deploy.sh"
 
