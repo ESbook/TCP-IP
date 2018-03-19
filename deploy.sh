@@ -1,11 +1,13 @@
 #!/bin/bash
 
+echo "hello world"
+
 set -o errexit -o nounset
 
 if [ "$TRAVIS_BRANCH" != "gh-pages" ]
 then 
     echo "This commit was made against the $TRAVIS_BRANCH and not the gh-pages. No deploy!" 
-    exit 0
+#    exit 0
 fi
 
 rev=$(git rev-parse --short HEAD)
