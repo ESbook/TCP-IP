@@ -1,29 +1,27 @@
-language: "node_js"
-
+language: node_js
+node_js:
+  - node
+install:
+  - npm install gitbook -g
+  - npm install -g gitbook-cli
+script:
+  - gitbook install
+  - gitbook build
+  - echo 'dfd'
+  - cd _book
+  - git init
+after_success:
+  - cd _book
+  - git init
+  - git config user.name 'esbook'
+  - git config user.email 'book.eson.org@gmail.com'
+  - 'git remote add origin ''https://$GH_TOKEN@github.com/ESbook/TCP-IP.git'''
+  - git add .
+  - git commit -m 'update'
+  - git push -f origin gh-pages
+  - sh deploy.sh
 
 env:
   global:
-    - GH_TOKEN: 2f6e9d835c8fb7a617e0fe909a203bc960335f52
-
-node_js:
- - "node"
-install:
- - "npm install gitbook -g"
- - "npm install -g gitbook-cli"
-script:
- - "gitbook install"  # install gitbook plugin
- - "gitbook build"  # build to static pages
- - "echo 'dfd'"
- - "cd _book"
- - "git init"
-after_success:
- - "cd _book"
- - "git init"
- - "git config user.name 'esbook'"
- - "git config user.email 'book.eson.org@gmail.com'"
- - "git remote add origin 'https://$GH_TOKEN@github.com/ESbook/TCP-IP.git'" 
- - "git add ."
- - "git commit -m 'update'"
- - "git push -f origin gh-pages"
- - "sh deploy.sh"
-
+    - secure: >-
+        JB7wRX9WNnMK3hTbvvn0AlJfxjJY37w9zs54/t6UMCSdNSusSiwX8tasLqstS2lda8W4XhNTnQ5pqGNB7o7b1Ufteo95iDUGouN1hHZt5naSagJRVSct4PKT/6uZxCPGhK5NCfu+QFpobrXfIhRU048VIWLQVB1lzUEaaBHBxge24TT8n7oJBHqIFQMa/KIirrLl6p9vblv2jUQUuZ1jo6PBi9FMBW2P7L0SYQj3R7fwpiFudxWU41iszUfdyliQl6iodl/kvjx5dSohre0z4c65nySRUkqL8z5YqdMC+KYFrtVWy/FdyJHIfnaoIvczrIULa+qzWOzwNC6d+A5QH4vzhRSb3gZdmS21VWMvr9CEez6Kv3ePA0A5ojGu7k9RwznYKBOHPQhBhiBjZZaSS4TQMrA+wLFoXJ4ZSf/AyvMHO0dCuz8CpY4pl3TO7lW0G2KOuvfxPLSJnLPyQqaM9GmP2UxxoHKKIS2zG4oep8vYxzD9PgGdJW3gkPbpE/XyGoLzdSVhcT2hewlNirzP9+2ooj/k2RTxwgV2AoeAjjHpMB8uT95G5fgrAvlOBwDR58Qod+2TTzS9Qv+dgQ91BTCsZPeg2aAs3pE+VZCEK/e+vLm6XRdw0QicEsOQnM7cerEF1EMkolbkmShfOIDgHnNnK4gsiCA4Ef2UdHjQcLw=
