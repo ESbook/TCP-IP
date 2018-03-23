@@ -6,11 +6,13 @@ a
 
 由githbookyemia页面编辑
 
-
-
-
-
 编辑: [gitbook](https://www.gitbook.com/book/esbook/tcp-ip/edit) , github-fork
 
 下载: [epub](https://www.gitbook.com/download/epub/book/esbook/tcp-ip),  [pdf](https://www.gitbook.com/download/pdf/book/esbook/tcp-ip)
+
+
+
+
+
+本文档由github pages提供静态网站服务，由travis-ci提供自动化部署服务。
 
