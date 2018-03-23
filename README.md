@@ -6,5 +6,11 @@ a
 
 由githbookyemia页面编辑
 
-[download pdf](https://www.gitbook.com/download/pdf/book/xu-song/tcp-ip)
+
+
+
+
+编辑: [gitbook](https://www.gitbook.com/book/esbook/tcp-ip/edit) , github-fork
+
+下载: [epub](https://www.gitbook.com/download/epub/book/esbook/tcp-ip),  [pdf](https://www.gitbook.com/download/pdf/book/esbook/tcp-ip)
 
